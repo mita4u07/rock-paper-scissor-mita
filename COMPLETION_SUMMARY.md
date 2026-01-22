@@ -26,7 +26,7 @@ This document provides a summary of all three challenge exercises that have been
 - Spock vaporizes Rock and smashes Scissors
 
 ### Files:
-- `main.py` - Complete game implementation
+- `main.py` - Complete game implementation here
 
 ### How to Play:
 ```bash
