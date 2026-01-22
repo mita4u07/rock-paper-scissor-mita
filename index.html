@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock-Paper-Scissors-Lizard-Spock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎮 Rock-Paper-Scissors-Lizard-Spock</h1>
+            <p class="subtitle">Make your choice and challenge the computer!</p>
+        </header>
+
+        <div class="game-section">
+            <!-- Score Board -->
+            <div class="scoreboard">
+                <div class="score-item">
+                    <span class="score-label">Wins</span>
+                    <span class="score-value" id="wins">0</span>
+                </div>
+                <div class="score-item">
+                    <span class="score-label">Losses</span>
+                    <span class="score-value" id="losses">0</span>
+                </div>
+                <div class="score-item">
+                    <span class="score-label">Ties</span>
+                    <span class="score-value" id="ties">0</span>
+                </div>
+            </div>
+
+            <!-- Game Choices -->
+            <div class="choices">
+                <button class="choice-btn" data-choice="rock">
+                    <span class="emoji">🪨</span>
+                    <span class="choice-name">Rock</span>
+                </button>
+                <button class="choice-btn" data-choice="paper">
+                    <span class="emoji">📄</span>
+                    <span class="choice-name">Paper</span>
+                </button>
+                <button class="choice-btn" data-choice="scissors">
+                    <span class="emoji">✂️</span>
+                    <span class="choice-name">Scissors</span>
+                </button>
+                <button class="choice-btn" data-choice="lizard">
+                    <span class="emoji">🦎</span>
+                    <span class="choice-name">Lizard</span>
+                </button>
+                <button class="choice-btn" data-choice="spock">
+                    <span class="emoji">🖖</span>
+                    <span class="choice-name">Spock</span>
+                </button>
+            </div>
+
+            <!-- Result Display -->
+            <div class="result-section" id="resultSection" style="display: none;">
+                <div class="battle">
+                    <div class="player-choice">
+                        <p class="label">You chose</p>
+                        <div class="choice-display">
+                            <span class="emoji-large" id="playerEmoji"></span>
+                            <span class="choice-text" id="playerChoice"></span>
+                        </div>
+                    </div>
+                    <div class="vs">VS</div>
+                    <div class="computer-choice">
+                        <p class="label">Computer chose</p>
+                        <div class="choice-display">
+                            <span class="emoji-large" id="computerEmoji"></span>
+                            <span class="choice-text" id="computerChoice"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="result-message" id="resultMessage"></div>
+                <div class="explanation" id="explanation"></div>
+            </div>
+
+            <!-- Rules Section -->
+            <details class="rules-section">
+                <summary>📖 Game Rules</summary>
+                <div class="rules-content" id="rulesContent">
+                    <p><strong>🪨 Rock</strong> crushes Scissors and Lizard</p>
+                    <p><strong>📄 Paper</strong> covers Rock and disproves Spock</p>
+                    <p><strong>✂️ Scissors</strong> cuts Paper and decapitates Lizard</p>
+                    <p><strong>🦎 Lizard</strong> eats Paper and poisons Spock</p>
+                    <p><strong>🖖 Spock</strong> vaporizes Rock and smashes Scissors</p>
+                </div>
+            </details>
+        </div>
+
+        <!-- Loading Indicator -->
+        <div class="loading" id="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>Playing...</p>
+        </div>
+
+        <!-- Error Message -->
+        <div class="error" id="error" style="display: none;"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

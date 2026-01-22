@@ -1,4 +1,6 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 from typing import Literal
 from main import get_computer_choice, determine_winner
@@ -8,6 +10,15 @@ app = FastAPI(
     title="Rock-Paper-Scissors-Lizard-Spock API",
     description="Play Rock-Paper-Scissors-Lizard-Spock via REST API",
     version="1.0.0"
+)
+
+# Configure CORS to allow frontend access
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # In production, replace with specific origins
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 

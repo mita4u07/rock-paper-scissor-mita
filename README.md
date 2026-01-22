@@ -19,6 +19,7 @@ This repository now includes all three challenge implementations:
 1. **✅ Rock-Paper-Scissors-Lizard-Spock** - Enhanced game with 5 choices and numbered menu interface
 2. **✅ Unit Tests** - Comprehensive test suite with 98% coverage (46 tests for CLI, 30 tests for API)
 3. **✅ REST API** - Full FastAPI implementation with interactive documentation
+4. **✅ Web UI** - Modern, responsive web interface for playing the game
 
 
 
@@ -40,6 +41,19 @@ If you're planning to run a GitHub Copilot workshop, please review the [workshop
 
 
 ## Quick Start
+
+### Play the Web UI
+```bash
+# 1. Start the API server
+python api.py
+
+# 2. Open index.html in your browser
+# Or use a local web server:
+python -m http.server 8080
+# Then visit http://localhost:8080
+```
+
+See [UI_README.md](UI_README.md) for detailed UI documentation.
 
 ### Play the CLI Game
 ```bash
@@ -80,12 +94,16 @@ curl -X POST http://localhost:8000/play -H "Content-Type: application/json" -d '
 In this project you will find: 
 
 * `main.py` - Complete Rock-Paper-Scissors-Lizard-Spock CLI game
-* `api.py` - FastAPI REST API implementation
+* `api.py` - FastAPI REST API implementation with CORS support
+* `index.html` - Web UI main page
+* `style.css` - Web UI styling and animations
+* `app.js` - Web UI JavaScript logic and API integration
 * `test_main.py` - Comprehensive unit tests for CLI game (46 tests, 98% coverage)
 * `test_api.py` - API endpoint tests (30 tests, 98% coverage)
 * `demo_api.py` - API demonstration script
 * `requirements.txt` - Python dependencies
 * `API_README.md` - Detailed API documentation
+* `UI_README.md` - Web UI documentation and guide
 * `run_tests.sh` - Test runner script
 * `start_api.sh` - API server launcher
 * a devcontainer that installs CodeTour and GitHub Copilot when the Codespace is created (If you want to use Codespaces)
