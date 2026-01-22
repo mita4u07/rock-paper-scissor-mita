@@ -12,6 +12,14 @@ Participants will be guided to install the GitHub Copilot VS Code extension, fol
 
 Depending on the time available, participants will be able to complete the game or just get started, from a simple version all the way to introducing additional logic to make the game more interesting complete, with unit tests and REST API endpoints.
 
+## ✅ Completed Challenges
+
+This repository now includes all three challenge implementations:
+
+1. **✅ Rock-Paper-Scissors-Lizard-Spock** - Enhanced game with 5 choices and numbered menu interface
+2. **✅ Unit Tests** - Comprehensive test suite with 98% coverage (46 tests for CLI, 30 tests for API)
+3. **✅ REST API** - Full FastAPI implementation with interactive documentation
+
 
 
 ## Instructions 
@@ -31,11 +39,55 @@ Filename | Description
 If you're planning to run a GitHub Copilot workshop, please review the [workshop guide](</.instructions/workshop organisers.md>) for tips and tricks to help you run a successful workshop. 
 
 
+## Quick Start
+
+### Play the CLI Game
+```bash
+python main.py
+```
+
+### Run Unit Tests
+```bash
+# Run all tests with coverage
+./run_tests.sh
+
+# Or run tests manually
+pytest test_main.py test_api.py -v --cov
+```
+
+### Start the REST API
+```bash
+# Start the API server
+./start_api.sh
+
+# Or run directly
+python api.py
+```
+
+Visit http://localhost:8000/docs for interactive API documentation.
+
+### Test the API
+```bash
+# Run the demo script
+python demo_api.py
+
+# Or use curl
+curl -X POST http://localhost:8000/play -H "Content-Type: application/json" -d '{"choice": "spock"}'
+```
+
 ## Project Structure
 
 In this project you will find: 
 
-* a `main.py` file with no contents
+* `main.py` - Complete Rock-Paper-Scissors-Lizard-Spock CLI game
+* `api.py` - FastAPI REST API implementation
+* `test_main.py` - Comprehensive unit tests for CLI game (46 tests, 98% coverage)
+* `test_api.py` - API endpoint tests (30 tests, 98% coverage)
+* `demo_api.py` - API demonstration script
+* `requirements.txt` - Python dependencies
+* `API_README.md` - Detailed API documentation
+* `run_tests.sh` - Test runner script
+* `start_api.sh` - API server launcher
 * a devcontainer that installs CodeTour and GitHub Copilot when the Codespace is created (If you want to use Codespaces)
 * an `.instructions` folder all the instructions for this workshop.
 * an `assets` folder containing images used in this workshop documentation.
